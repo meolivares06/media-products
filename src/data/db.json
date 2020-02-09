@@ -1,0 +1,47 @@
+{
+    "categories": [{
+            "id": 1,
+            "name": "Trailer TV",
+            "hasLenght": "30"
+        },
+        {
+            "id": 2,
+            "name": "Radio Spot",
+            "hasLenght": "20"
+        },
+        {
+            "id": 3,
+            "name": "Outdoors",
+            "hasLenght": "30"
+        },
+        {
+            "id": 4,
+            "name": "Trailer Movie",
+            "hasLenght": "30"
+        },
+        {
+            "id": 5,
+            "name": "Internet",
+            "hasLenght": "0"
+        }
+    ],
+    "products": [{
+            "category_id": 4,
+            "name": "Spiderman",
+            "type": "Video",
+            "release_date": "08/02/2020",
+            "insert_date": "08/02/2020",
+            "number_of_views": 0,
+            "abbreviation": "SPI"
+        },
+        {
+            "category_id": 4,
+            "name": "Spiderman the invisible men",
+            "type": "Video",
+            "release_date": "08/02/2020",
+            "insert_date": "08/02/2020",
+            "number_of_views": 0,
+            "abbreviation": "STIM"
+        }
+    ]
+}
