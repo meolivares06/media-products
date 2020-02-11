@@ -23,7 +23,7 @@ class ProductsService {
     return await product.json();
   }
 
-  async addProduct(product) {
+  async addProduct(product) {debugger;
     const payload = this.adaptResponse(product);
     try {
       const responseNew = await fetch(this.productsUrl, {
@@ -52,7 +52,8 @@ class ProductsService {
       release_date: response.productReleaseDate,
       insert_date: response.productInsertDate,
       number_of_views: response.productViews,
-      abbreviation: response.productAbbreviation
+      abbreviation: response.productAbbreviation,
+      length: response.productLength
     };
     return t;
   }

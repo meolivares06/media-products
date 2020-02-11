@@ -19,17 +19,21 @@ class ProductPage2 extends React.Component {
       productInsertDate: "",
       productViews: "",
       productAbbreviation: "",
+      productLength: "",
       //},
+      selectedCategory: null,
       categories: []
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleCategoryChange = this.handleCategoryChange.bind(this);
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  adaptResponse(response) {debugger;
+  adaptResponse(response) {
     const abbr = response.abbreviation || response.productAbbreviation
+    const length = response.length || response.productLength
     const t = {
       productId: response.id || response.productId || null,
       productCategory: response.category_id || response.productCategory,
@@ -43,6 +47,10 @@ class ProductPage2 extends React.Component {
       t.productAbbreviation = GetAbbreviation(t.productName);
     }else {
       t.productAbbreviation = abbr;
+    }
+
+    if (length !== null) {
+      t.productLength = length;
     }
     return t;
   }
@@ -72,6 +80,17 @@ class ProductPage2 extends React.Component {
       console.log(error);
     }
   }
+  handleCategoryChange(event) {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+    
+    const category = this.state.categories.find(category=> category.id == value);
+    this.setState({
+      selectedCategory: category
+    });
+    
+  }
   handleInputChange(event) {
     const target = event.target;
     const value = target.value;
@@ -82,7 +101,7 @@ class ProductPage2 extends React.Component {
     });
     
   }
-  handleSubmit(event) {
+  handleSubmit(event) {debugger;
     const formData = this.adaptResponse(this.state);
     if(this.props.editing === 1)
       ProductsService.editProduct(formData);
@@ -102,6 +121,7 @@ class ProductPage2 extends React.Component {
         <FormProductPage
           handleSubmit={this.handleSubmit}
           handleInputChange={this.handleInputChange}
+          handleCategoryChange={this.handleCategoryChange}
           p={this.state}
           editing={this.props.editing}
         />
@@ -111,9 +131,15 @@ class ProductPage2 extends React.Component {
 }
 
 const FormProductPage = props => {
-  const { handleSubmit, handleInputChange, p } = props;
+  const { handleSubmit, handleInputChange, handleCategoryChange, p } = props;
   const c = p.categories;
-
+  const showLength = (p.selectedCategory !== null && p.selectedCategory.hasLength !== false) ? true : false;
+  let displayLengthField = "form-group";
+  if(showLength === true) {
+    displayLengthField = "form-group"
+  }else {
+    displayLengthField = "form-group  d-none"
+  }
   return (
     <form method="post" onSubmit={() => handleSubmit(p)}>
       <div className="form-group">
@@ -122,13 +148,28 @@ const FormProductPage = props => {
           className="form-control"
           id="productCategory"
           name="productCategory"
-          onChange={handleInputChange}
+          onChange={(ev)=> {handleInputChange(ev);handleCategoryChange(ev)}}
           value={p.productCategory}
         >
           {c.map(category => {
             return [<option value="">---</option>,<option value={category.id}>{category.name}</option>];
           })}
         </select>
+      </div>
+
+
+      <div className={displayLengthField} >
+        <label htmlFor="productName">Length of the product</label>
+        <input
+          type="text"
+          className="form-control"
+          id="productLength"
+          aria-describedby="nameHelp"
+          placeholder="Enter length of product"
+          value={p.productLength}
+          onChange={handleInputChange}
+          name="productLength"
+        />
       </div>
 
       <div className="form-group">

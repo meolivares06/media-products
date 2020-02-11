@@ -41,10 +41,9 @@ class RowComponent extends React.Component {
         <tr>
           <th scope="row">{this.state.categoryName}</th>
           <td>{product.name}</td>
-          <td>
-            {product.abbreviation}
-          </td>
+          <td>{product.abbreviation}</td>
           <td>{product.type}</td>
+          <td>{product.length}</td>          
           <td>{product.release_date}</td>
           <td>{product.insert_date}</td>
           <td>

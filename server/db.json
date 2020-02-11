@@ -3,27 +3,27 @@
     {
       "id": 1,
       "name": "Trailer TV",
-      "hasLenght": "30"
+      "hasLength": true
     },
     {
       "id": 2,
       "name": "Radio Spot",
-      "hasLenght": "20"
+      "hasLength": true
     },
     {
       "id": 3,
       "name": "Outdoors",
-      "hasLenght": "30"
+      "hasLength": false
     },
     {
       "id": 4,
       "name": "Trailer Movie ter",
-      "hasLenght": "30"
+      "hasLength": true
     },
     {
       "id": 5,
       "name": "Internet",
-      "hasLenght": "0"
+      "hasLength": false
     }
   ],
   "product": [
@@ -35,7 +35,8 @@
       "release_date": "08/02/2020",
       "insert_date": "08/02/2020",
       "number_of_views": 0,
-      "abbreviation": "SPI"
+      "abbreviation": "SPI",
+      "length": 1600
     },
     {
       "id": 2,
@@ -45,7 +46,8 @@
       "release_date": "08/02/2020",
       "insert_date": "08/02/2020",
       "number_of_views": 0,
-      "abbreviation": "THF"
+      "abbreviation": "THF",
+      "length": 400
     },
     {
       "id": 3,
@@ -55,7 +57,8 @@
       "release_date": "2020-02-10",
       "insert_date": "2020-02-10",
       "number_of_views": "1",
-      "abbreviation": "IPM"
+      "abbreviation": "IPM",
+      "length": 400
     },
     {
       "id": 4,
@@ -65,7 +68,19 @@
       "release_date": "2020-02-10",
       "insert_date": "2020-02-10",
       "number_of_views": "1",
-      "abbreviation": "TEA"
+      "abbreviation": "TEA",
+      "length": null
+    },
+    {
+      "id": 5,
+      "category_id": "2",
+      "name": "New",
+      "type": "Audio",
+      "release_date": "2020-02-10",
+      "insert_date": "2020-02-10",
+      "number_of_views": "1",
+      "abbreviation": "NEW",
+      "length": "200"
     }
   ]
 }

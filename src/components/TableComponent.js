@@ -34,6 +34,7 @@ const TableComponent = ({data, onEdit, onDelete}) => {
                 <th scope="col">Name</th>
                 <th scope="col">Abbr</th>
                 <th scope="col">Type</th>
+                <th scope="col">Length</th>
                 <th scope="col">R.Date</th>
                 <th scope="col">I.Date</th>
                 <th scope="col">Views</th>
