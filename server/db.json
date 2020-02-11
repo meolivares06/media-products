@@ -34,9 +34,8 @@
       "type": "Video",
       "release_date": "08/02/2020",
       "insert_date": "08/02/2020",
-      "number_of_views": 0,
       "abbreviation": "SPI",
-      "length": 1600
+      "length": "3600"
     },
     {
       "id": 2,
@@ -45,9 +44,8 @@
       "type": "Video",
       "release_date": "08/02/2020",
       "insert_date": "08/02/2020",
-      "number_of_views": 0,
       "abbreviation": "THF",
-      "length": "200"
+      "length": "3000"
     },
     {
       "id": 3,
@@ -56,9 +54,8 @@
       "type": "Video",
       "release_date": "2020-02-10",
       "insert_date": "2020-02-10",
-      "number_of_views": "1",
-      "abbreviation": "IPM",
-      "length": 400
+      "number_of_views": 2,
+      "abbreviation": "IPM"
     },
     {
       "id": 4,
@@ -67,9 +64,8 @@
       "type": "Photo",
       "release_date": "2020-02-10",
       "insert_date": "2020-02-10",
-      "number_of_views": "1",
-      "abbreviation": "TEA",
-      "length": "300"
+      "number_of_views": 1,
+      "abbreviation": "TEA"
     },
     {
       "id": 5,
@@ -78,9 +74,8 @@
       "type": "Audio",
       "release_date": "2020-02-10",
       "insert_date": "2020-02-10",
-      "number_of_views": "1",
-      "abbreviation": "NEW",
-      "length": "200"
+      "number_of_views": 3,
+      "abbreviation": "NEW"
     },
     {
       "id": 6,
@@ -89,9 +84,8 @@
       "type": "outout",
       "release_date": "2020-02-10",
       "insert_date": "2020-02-10",
-      "number_of_views": "1",
-      "abbreviation": "OUT",
-      "length": ""
+      "number_of_views": 1,
+      "abbreviation": "OUT"
     }
   ]
 }

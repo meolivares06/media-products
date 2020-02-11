@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import AddViewsComponent from "./AddViewsComponent";
 import Edit from "./Edit";
 import GetAbbreviation from "./GetAbbreviation";
-
+import GetLengthFormated from "./GetLengthFormated";
 import CategoriesService from "../servicios/CategoriesService";
 
 class RowComponent extends React.Component {
@@ -43,11 +43,11 @@ class RowComponent extends React.Component {
           <td>{product.name}</td>
           <td>{product.abbreviation}</td>
           <td>{product.type}</td>
-          <td>{product.length}</td>          
+          <td>{GetLengthFormated(product.length)}</td>
           <td>{product.release_date}</td>
           <td>{product.insert_date}</td>
           <td>
-            <AddViewsComponent />
+            <AddViewsComponent product={product} />
           </td>
           <td>
             <div className="btn-group">
