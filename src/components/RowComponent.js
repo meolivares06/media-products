@@ -33,7 +33,7 @@ class RowComponent extends React.Component {
     this.props.onDelete(id)
   }
   render() {
-    const { product, category, onEdit } = this.props;
+    const { product, category, onEdit, onIncrementNumber } = this.props;
     if (!this.state.categoryName) {
       return (<p>Cargando....</p>)
     }else {
@@ -47,7 +47,7 @@ class RowComponent extends React.Component {
           <td>{product.release_date}</td>
           <td>{product.insert_date}</td>
           <td>
-            <AddViewsComponent product={product} />
+            <AddViewsComponent product={product} onIncrementNumber={onIncrementNumber} number_of_views={product.number_of_views} />
           </td>
           <td>
             <div className="btn-group">

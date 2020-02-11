@@ -28,55 +28,13 @@
   ],
   "product": [
     {
-      "id": 1,
-      "category_id": 4,
-      "name": "Spiderman",
-      "type": "Video",
-      "release_date": "08/02/2020",
-      "insert_date": "08/02/2020",
-      "number_of_views": 2,
-      "abbreviation": "SPI",
-      "length": "3600"
-    },
-    {
-      "id": 2,
-      "category_id": "1",
-      "name": "The Four",
-      "type": "Video",
-      "release_date": "08/02/2020",
-      "insert_date": "08/02/2020",
-      "abbreviation": "THF",
-      "length": "3000"
-    },
-    {
-      "id": 3,
-      "category_id": 1,
-      "name": "Ip Man4",
-      "type": "Video",
-      "release_date": "2020-02-10",
-      "insert_date": "2020-02-10",
-      "number_of_views": 2,
-      "abbreviation": "IPM",
-      "length": "155"
-    },
-    {
-      "id": 4,
-      "category_id": "4",
-      "name": "Test abbr",
-      "type": "Photo",
-      "release_date": "2020-02-10",
-      "insert_date": "2020-02-10",
-      "number_of_views": 1,
-      "abbreviation": "TEA"
-    },
-    {
       "id": 5,
       "category_id": "2",
       "name": "New",
       "type": "Audio",
       "release_date": "2020-02-10",
       "insert_date": "2020-02-10",
-      "number_of_views": 3,
+      "number_of_views": 14,
       "abbreviation": "NEW"
     },
     {
@@ -84,9 +42,9 @@
       "category_id": "3",
       "name": "Outdoors product",
       "type": "outout",
-      "release_date": "2020-02-10",
+      "release_date": "2020-02-08",
       "insert_date": "2020-02-10",
-      "number_of_views": 3,
+      "number_of_views": 21,
       "abbreviation": "OUT"
     }
   ]

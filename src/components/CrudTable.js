@@ -13,28 +13,45 @@ class CrudTable extends Component {
       categories: [],
       products: [],
       editing: false,
-      productEditing: null
+      productEditing: null,
+      sort_field: 'number_of_views',
+      sort_order: 'asc'
     };
 
     this.handleEdit = this.handleEdit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleSort = this.handleSort.bind(this);
+    this.onIncrementNumber = this.onIncrementNumber.bind(this);
+
   }
 
-  async fetchProducts() {
-    const products = await ProductsService.getAll();
+  async fetchProducts(sort_fieldP, sort_orderP) {
+    let sort_field = sort_fieldP || this.state.sort_field;
+    let sort_order = sort_orderP || this.state.sort_order;
+    const products = await ProductsService.getAll(sort_field, sort_order);
     this.setState({
-      products: products
+      products: products,
+      sort_field: sort_field,
+      sort_order: sort_order
     });
   }
   async fetchCategories() {
-    const categories = await CategoriesService.getAll();
-    this.setState({
-      categories: categories
-    });
+    try{
+      const categories = await CategoriesService.getAll();
+      this.setState({
+        categories: categories
+      });
+    } catch (err) {
+      console.log(err);
+    }
   }
   async componentDidMount() {
-    await this.fetchProducts();
-    await this.fetchCategories();
+    try{
+      await this.fetchProducts();
+      await this.fetchCategories();
+    } catch (err) {
+      console.log(err);
+    }
   }
   handleEdit(id) {
     this.setState({
@@ -46,6 +63,24 @@ class CrudTable extends Component {
     this.setState({
       productEditing: id
     });
+  }
+
+  async handleSort(field, order='desc') {
+    try{
+      await this.fetchProducts(field, order);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+  async onIncrementNumber(product, number_of_views) {
+    try {
+      product.number_of_views = parseInt(number_of_views) + 1;
+      const response = await ProductsService.editProduct(product);
+      await this.fetchProducts();
+    }catch(error) {
+      console.log(error);
+
+    }
   }
 
   async deleteProduct(id) {
@@ -70,6 +105,8 @@ class CrudTable extends Component {
         <TableComponent
           onEdit={this.handleEdit}
           onDelete={this.handleDelete}
+          onSort={this.handleSort}
+          onIncrementNumber={this.onIncrementNumber}
           data={this.state}
         />
       );

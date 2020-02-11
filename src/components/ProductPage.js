@@ -128,7 +128,6 @@ class ProductPage2 extends React.Component {
     });
   }
   handleSubmit(event) {
-    debugger;
     const formData = this.adaptResponse(this.state);
     if (this.props.editing === 1) ProductsService.editProduct(formData);
     else ProductsService.addProduct(formData);

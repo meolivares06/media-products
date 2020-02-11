@@ -8,9 +8,28 @@ class ProductsService {
     this.productsUrl = `${api}/product`;
   }
 
-  async getAll() {
+  async getAll(sort_field, sort_order) {
+    let url = this.productsUrl;
+
+    if(undefined !== sort_field)
+      url = `${url}?_sort=${sort_field}`
+
+    if (undefined !== sort_order)
+      url = `${url}&_order=${sort_order}`
+
     try {
-      const products = await fetch(this.productsUrl);
+      const products = await fetch(url);
+      return await products.json();
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+
+  async sort(field) {
+    try {
+      //http://localhost:4200/product?_sort=number_of_views
+      let url = `${this.productsUrl}?_sort=${field}`;
+      const products = await fetch(url);debugger;
       return await products.json();
     } catch (error) {
       console.error(error.message);
@@ -82,7 +101,7 @@ class ProductsService {
   }
 
   async editProduct(product) {
-    debugger;
+    
     const payload = this.adaptResponse(product);
     try {
       const responseNew = await fetch(`${this.productsUrl}/${payload.id}`, {
