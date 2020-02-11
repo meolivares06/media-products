@@ -60,14 +60,15 @@ class ProductsService {
       release_date: response.release_date || response.productReleaseDate,
       insert_date: response.insert_date || response.productInsertDate,
       number_of_views: response.number_of_views || response.productViews,
-      abbreviation: response.productAbbreviation || response.productAbbreviation,
+      abbreviation:
+        response.productAbbreviation || response.productAbbreviation,
       length: response.length || response.productLength
     };
 
     const abbr = response.abbreviation || response.productAbbreviation;
 
     if (abbr === "") {
-      t.abbreviation = GetAbbreviation(t.productName);
+      t.abbreviation = GetAbbreviation(t.name);
     } else {
       t.abbreviation = abbr;
     }

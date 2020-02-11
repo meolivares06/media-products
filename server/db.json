@@ -34,6 +34,7 @@
       "type": "Video",
       "release_date": "08/02/2020",
       "insert_date": "08/02/2020",
+      "number_of_views": 2,
       "abbreviation": "SPI",
       "length": "3600"
     },
@@ -55,7 +56,8 @@
       "release_date": "2020-02-10",
       "insert_date": "2020-02-10",
       "number_of_views": 2,
-      "abbreviation": "IPM"
+      "abbreviation": "IPM",
+      "length": "155"
     },
     {
       "id": 4,
@@ -80,11 +82,11 @@
     {
       "id": 6,
       "category_id": "3",
-      "name": "outd",
+      "name": "Outdoors product",
       "type": "outout",
       "release_date": "2020-02-10",
       "insert_date": "2020-02-10",
-      "number_of_views": 1,
+      "number_of_views": 3,
       "abbreviation": "OUT"
     }
   ]
