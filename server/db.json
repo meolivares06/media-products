@@ -40,14 +40,14 @@
     },
     {
       "id": 2,
-      "category_id": 3,
+      "category_id": "1",
       "name": "The Four",
       "type": "Video",
       "release_date": "08/02/2020",
       "insert_date": "08/02/2020",
       "number_of_views": 0,
       "abbreviation": "THF",
-      "length": 400
+      "length": "200"
     },
     {
       "id": 3,
@@ -69,7 +69,7 @@
       "insert_date": "2020-02-10",
       "number_of_views": "1",
       "abbreviation": "TEA",
-      "length": null
+      "length": "300"
     },
     {
       "id": 5,
@@ -81,6 +81,17 @@
       "number_of_views": "1",
       "abbreviation": "NEW",
       "length": "200"
+    },
+    {
+      "id": 6,
+      "category_id": "3",
+      "name": "outd",
+      "type": "outout",
+      "release_date": "2020-02-10",
+      "insert_date": "2020-02-10",
+      "number_of_views": "1",
+      "abbreviation": "OUT",
+      "length": ""
     }
   ]
 }

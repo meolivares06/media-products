@@ -65,6 +65,7 @@ class ProductPage2 extends React.Component {
       if(this.props.editing === 1) {
         const responsep = await ProductsService.getProductById(this.props.id_edit);
         const t = responsep[0];
+        const category = this.state.categories.find(category=> category.id == t.category_id);
         this.setState({
           productId: t.id,
           productCategory: t.category_id,
@@ -73,7 +74,9 @@ class ProductPage2 extends React.Component {
           productReleaseDate: t.release_date,
           productInsertDate: t.insert_date,
           productViews: t.number_of_views,
-          productAbbreviation: t.abbreviation
+          productAbbreviation: t.abbreviation,
+          productLength: t.productLength,
+          selectedCategory: category
         });
       }
     } catch (error) {
