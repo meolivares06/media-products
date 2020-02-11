@@ -34,12 +34,13 @@ class RowComponent extends React.Component {
   }
   render() {
     const { product, category, onEdit, onIncrementNumber } = this.props;
+    console.log(category);
     if (!this.state.categoryName) {
       return (<p>Cargando....</p>)
     }else {
       return (
         <tr>
-          <th scope="row">{this.state.categoryName}</th>
+          <th scope="row">{category.name}</th>
           <td>{product.name}</td>
           <td>{product.abbreviation}</td>
           <td>{product.type}</td>

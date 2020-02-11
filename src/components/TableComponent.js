@@ -2,7 +2,7 @@ import React from "react";
 import RowComponent from "./RowComponent";
 
 const getCategory = (arr, id) => {
-  return arr.find(category => category.id == id);
+  return arr.find(category => category.id === id);
 };
 const getProductRows = (
   products = [],
@@ -12,12 +12,14 @@ const getProductRows = (
   onIncrementNumber
 ) => {
   return products.map((product, index) => {
-    //const {name, id} = getCategory(categories, product.category_id);
+    let category = categories.find(category => parseInt(category.id) === parseInt(product.category_id));
+    console.log(category);
+
     return (
       <RowComponent
         key={index}
         product={product}
-        category={product.category_id}
+        category={category}
         onEdit={onEdit}
         onDelete={onDelete}
         onIncrementNumber={onIncrementNumber}

@@ -1,5 +1,4 @@
 const transform = (value) => {
-    debugger;
 
     if (!value)
         return '';

@@ -29,7 +29,7 @@ class ProductsService {
     try {
       //http://localhost:4200/product?_sort=number_of_views
       let url = `${this.productsUrl}?_sort=${field}`;
-      const products = await fetch(url);debugger;
+      const products = await fetch(url);
       return await products.json();
     } catch (error) {
       console.error(error.message);
@@ -47,7 +47,7 @@ class ProductsService {
   }
 
   async addProduct(product) {
-    debugger;
+    
     const payload = this.adaptResponse(product);
     try {
       const responseNew = await fetch(this.productsUrl, {
@@ -101,7 +101,7 @@ class ProductsService {
   }
 
   async editProduct(product) {
-    
+
     const payload = this.adaptResponse(product);
     try {
       const responseNew = await fetch(`${this.productsUrl}/${payload.id}`, {
