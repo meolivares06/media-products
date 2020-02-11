@@ -28,7 +28,7 @@ class ProductPage2 extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  adaptResponse(response) {
+  adaptResponse(response) {debugger;
     const abbr = response.abbreviation || response.productAbbreviation
     const t = {
       productId: response.id || response.productId || null,
@@ -37,9 +37,13 @@ class ProductPage2 extends React.Component {
       productType: response.type || response.productType,
       productReleaseDate: response.release_date || response.productReleaseDate,
       productInsertDate: response.insert_date || response.productInsertDate,
-      productViews: response.number_of_views || response.productViews,
-      productAbbreviation: (abbr === '') ? GetAbbreviation(abbr) : abbr
+      productViews: response.number_of_views || response.productViews      
     };
+    if (abbr === '') {
+      t.productAbbreviation = GetAbbreviation(t.productName);
+    }else {
+      t.productAbbreviation = abbr;
+    }
     return t;
   }
   async componentDidMount() {
