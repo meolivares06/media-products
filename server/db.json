@@ -46,6 +46,16 @@
       "insert_date": "2020-02-10",
       "number_of_views": 21,
       "abbreviation": "OUT"
+    },
+    {
+      "id": 7,
+      "category_id": "1",
+      "name": "Uno nuevo",
+      "type": "Video",
+      "release_date": "2020-02-03",
+      "insert_date": "2020-02-11",
+      "number_of_views": 1,
+      "length": "450"
     }
   ]
 }

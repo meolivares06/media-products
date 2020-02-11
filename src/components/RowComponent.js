@@ -5,7 +5,45 @@ import GetAbbreviation from "./GetAbbreviation";
 import GetLengthFormated from "./GetLengthFormated";
 import CategoriesService from "../servicios/CategoriesService";
 
-class RowComponent extends React.Component {
+const RowComponent = (props) => {
+  const { product, category, onEdit, onIncrementNumber } = props;
+  console.log(category);
+
+
+  if (!category.name) {
+    return (<p>Cargando....</p>)
+  } else {
+    return (
+      <tr>
+        <th scope="row">{category.name}</th>
+        <td>{product.name}</td>
+        <td>{product.abbreviation}</td>
+        <td>{product.type}</td>
+        <td>{GetLengthFormated(product.length)}</td>
+        <td>{product.release_date}</td>
+        <td>{product.insert_date}</td>
+        <td>
+          <AddViewsComponent product={product} onIncrementNumber={onIncrementNumber} number_of_views={product.number_of_views} />
+        </td>
+        <td>
+          <div className="btn-group">
+            <Edit productId={product.id} onEdit={onEdit} />
+            <a
+              type="button"
+              className="btn btn-sm btn-outline-secondary"
+              onClick={() => {
+                props.delete(product.id);
+              }}
+            >
+              Delete
+              </a>
+          </div>
+        </td>
+      </tr>
+    );
+  }
+}
+class RowComponent2 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
