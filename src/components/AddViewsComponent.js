@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ProductsService from "./../servicios/ProductsService";
 
-const AddViewsComponent2 = ({
+const AddViewsComponent = ({
   product,
   number_of_views,
   onIncrementNumber
@@ -24,7 +24,7 @@ const AddViewsComponent2 = ({
   );
 };
 
-class AddViewsComponent extends React.Component {
+class AddViewsComponent2 extends React.Component {
   constructor(props) {
     super(props);
 
