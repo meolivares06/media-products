@@ -21,7 +21,7 @@ it("Renderizado inicial", ()=> {
     act(()=>{
         render(<AddViewsComponent />, container);
     })
-    expect(container.textContent).toBe('+Views0');
+    expect(container.textContent).toBe('+10');
 })
 
 it("Aumenta el valor con click", ()=> {
@@ -31,10 +31,10 @@ it("Aumenta el valor con click", ()=> {
     });
 
     const a = document.querySelector("[data-testid=views]");
-    expect(a.textContent).toBe('+Views0');
+    expect(a.textContent).toBe('+10');
 
     act(()=>{
         a.dispatchEvent(new MouseEvent("click", {bubbles: true}))
     });
-    expect(container.textContent).toBe('+Views1');
+    expect(container.textContent).toBe('+11');
 })

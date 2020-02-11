@@ -1,0 +1,71 @@
+{
+  "category": [
+    {
+      "id": 1,
+      "name": "Trailer TV",
+      "hasLenght": "30"
+    },
+    {
+      "id": 2,
+      "name": "Radio Spot",
+      "hasLenght": "20"
+    },
+    {
+      "id": 3,
+      "name": "Outdoors",
+      "hasLenght": "30"
+    },
+    {
+      "id": 4,
+      "name": "Trailer Movie ter",
+      "hasLenght": "30"
+    },
+    {
+      "id": 5,
+      "name": "Internet",
+      "hasLenght": "0"
+    }
+  ],
+  "product": [
+    {
+      "id": 1,
+      "category_id": 4,
+      "name": "Spiderman",
+      "type": "Video",
+      "release_date": "08/02/2020",
+      "insert_date": "08/02/2020",
+      "number_of_views": 0,
+      "abbreviation": "SPI"
+    },
+    {
+      "id": 2,
+      "category_id": 3,
+      "name": "The Four",
+      "type": "Video",
+      "release_date": "08/02/2020",
+      "insert_date": "08/02/2020",
+      "number_of_views": 0,
+      "abbreviation": "THF"
+    },
+    {
+      "id": 3,
+      "category_id": 1,
+      "name": "Ip Man4",
+      "type": "Video",
+      "release_date": "2020-02-10",
+      "insert_date": "2020-02-10",
+      "number_of_views": "1",
+      "abbreviation": "IPM"
+    },
+    {
+      "id": 4,
+      "category_id": "4",
+      "name": "Aladin",
+      "type": "Movie",
+      "release_date": "2020-02-10",
+      "insert_date": "2020-02-10",
+      "number_of_views": "1",
+      "abbreviation": "ALA"
+    }
+  ]
+}

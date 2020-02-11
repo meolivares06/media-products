@@ -1,5 +1,5 @@
 {
-    "category": [{
+    "categories": [{
             "id": 1,
             "name": "Trailer TV",
             "hasLenght": "30"
@@ -16,7 +16,7 @@
         },
         {
             "id": 4,
-            "name": "Trailer Movie fdgfg",
+            "name": "Trailer Movie ter",
             "hasLenght": "30"
         },
         {
@@ -25,7 +25,8 @@
             "hasLenght": "0"
         }
     ],
-    "product": [{
+    "products": [{
+            "id": 1,
             "category_id": 4,
             "name": "Spiderman",
             "type": "Video",
@@ -35,6 +36,7 @@
             "abbreviation": "SPI"
         },
         {
+            "id": 2,
             "category_id": 4,
             "name": "Spiderman the invisible men",
             "type": "Video",

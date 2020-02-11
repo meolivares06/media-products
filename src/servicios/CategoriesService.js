@@ -2,7 +2,7 @@ const api = 'http://localhost:4200';
 class CategoriesService {
 
     constructor() {
-        this.categoriesUrl = `${api}/categories`;
+        this.categoriesUrl = `${api}/category`;
     }
 
     async getAll() {
@@ -12,6 +12,20 @@ class CategoriesService {
         } catch (error) {
             console.error(error.message)
         }
+    }
+
+    async getProductCategoryById(id) {
+
+        const category = await fetch(this.categoriesUrl + '?id=' + id);
+
+
+        if (!category) {
+            const error = new Error('Category not found');
+            throw error;
+        }
+        return await category.json();
+
+
     }
 
 }

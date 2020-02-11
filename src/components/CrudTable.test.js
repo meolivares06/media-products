@@ -82,7 +82,7 @@ it("renderiza CrudTable con datos", async () => {
     await act(async () => {
         render( <CrudTable /> , container);
     })
-    console.log(111,container.textContent);
+
     expect(container.textContent).toBe('CategoryNameAbbrTypeR.DateI.DateOperations')
 
     global.fetch.mockRestore();

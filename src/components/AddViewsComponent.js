@@ -9,7 +9,7 @@ const AddViewsComponent = ()=> {
             data-testid="views"
             onClick={()=> setCount(count + 1)}
         >
-            +Views<span className="badge badge-dark">{count}</span>
+            +1<span className="badge badge-dark">{count}</span>
         </a>                            
     )
 }
