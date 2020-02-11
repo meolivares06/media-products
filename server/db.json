@@ -60,12 +60,12 @@
     {
       "id": 4,
       "category_id": "4",
-      "name": "Aladin",
-      "type": "Movie",
+      "name": "Test abbr",
+      "type": "Photo",
       "release_date": "2020-02-10",
       "insert_date": "2020-02-10",
       "number_of_views": "1",
-      "abbreviation": "ALA"
+      "abbreviation": ""
     }
   ]
 }

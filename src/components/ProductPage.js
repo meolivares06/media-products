@@ -3,8 +3,9 @@ import { useParams } from "react-router";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import ProductsService from "./../servicios/ProductsService";
 import CategoriesService from "./../servicios/CategoriesService";
+import GetAbbreviation from "./GetAbbreviation";
 
-class ProductPage extends React.Component {
+class ProductPage2 extends React.Component {
   constructor(props) {
     super(props);
 
@@ -28,7 +29,7 @@ class ProductPage extends React.Component {
   }
 
   adaptResponse(response) {
-    //falta id
+    const abbr = response.abbreviation || response.productAbbreviation
     const t = {
       productId: response.id || response.productId || null,
       productCategory: response.category_id || response.productCategory,
@@ -37,19 +38,20 @@ class ProductPage extends React.Component {
       productReleaseDate: response.release_date || response.productReleaseDate,
       productInsertDate: response.insert_date || response.productInsertDate,
       productViews: response.number_of_views || response.productViews,
-      productAbbreviation: response.abbreviation || response.productAbbreviation
+      productAbbreviation: (abbr === '') ? GetAbbreviation(abbr) : abbr
     };
     return t;
   }
   async componentDidMount() {
     try {
+      
       const response = await CategoriesService.getAll();
       this.setState({
         categories: response
       });
 
       if(this.props.editing === 1) {
-        const responsep = await ProductsService.getProductById(1);
+        const responsep = await ProductsService.getProductById(this.props.id_edit);
         const t = responsep[0];
         this.setState({
           productId: t.id,
@@ -201,7 +203,7 @@ const FormProductPage = props => {
           className="form-control"
           id="productAbbreviation"
           aria-describedby="typeHelp"
-          placeholder="Enter type of product"
+          placeholder="Leave blank for autogenerate it"
           name="productAbbreviation"
           onChange={handleInputChange}
           value={p.productAbbreviation}
@@ -223,5 +225,12 @@ const FormProductPage = props => {
     </form>
   );
 };
+
+const ProductPage = (props) => {
+  let { id } = useParams();
+  return (
+    <ProductPage2 id_edit={id} editing={props.editing}/>
+  )
+}
 
 export default ProductPage;

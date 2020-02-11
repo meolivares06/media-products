@@ -42,7 +42,7 @@ class RowComponent extends React.Component {
           <th scope="row">{this.state.categoryName}</th>
           <td>{product.name}</td>
           <td>
-            <GetAbbreviation value={product.abbreviation} />
+            {GetAbbreviation(product.abbreviation)}
           </td>
           <td>{product.type}</td>
           <td>{product.release_date}</td>
