@@ -46,7 +46,14 @@ const TableComponent = ({
             <th scope="col">Abbr</th>
             <th scope="col">Type</th>
             <th scope="col">Length</th>
-            <th scope="col">R.Date</th>
+            <th scope="col"><button
+              onClick={() => {
+                onSort("release_date", sort_order);
+              }}
+              className="btn btn-link btn-sm"
+            >
+              R.Date <small>{sort_order}</small>
+            </button></th>
             <th scope="col">I.Date</th>
             <th scope="col">
               <button
