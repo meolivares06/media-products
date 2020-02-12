@@ -17,7 +17,7 @@ const getProductRows = (
 
     return (
       <RowComponent
-        key={index}
+        key={`product${product.id}`}
         product={product}
         category={category}
         onEdit={onEdit}
