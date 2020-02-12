@@ -1,5 +1,4 @@
 import GetAbbreviation from "../components/GetAbbreviation";
-import GetLengthFormated from "../components/GetLengthFormated";
 
 const api = "http://localhost:4200";
 
@@ -47,7 +46,7 @@ class ProductsService {
   }
 
   async addProduct(product) {
-    
+
     const payload = this.adaptResponse(product);
     try {
       const responseNew = await fetch(this.productsUrl, {

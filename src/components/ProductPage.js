@@ -183,8 +183,8 @@ const FormProductPage = props => {
         >
           {c.map(category => {
             return [
-              <option value="">---</option>,
-              <option value={category.id}>{category.name}</option>
+              <option value="" key={'empty'}>---</option>,
+              <option value={category.id} key={category.id}>{category.name}</option>
             ];
           })}
         </select>

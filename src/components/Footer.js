@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="text-muted">
       <div className="container">
         <p className="float-right">
-          <a href="album.htm#">Back to top</a>
+          <a href="#">Back to top</a>
         </p>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum

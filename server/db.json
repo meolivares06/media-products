@@ -54,8 +54,18 @@
       "type": "Video",
       "release_date": "2020-02-03",
       "insert_date": "2020-02-11",
-      "number_of_views": 1,
+      "number_of_views": 3,
       "length": "450"
+    },
+    {
+      "id": 8,
+      "category_id": "2",
+      "name": "Solo un minuto",
+      "type": "Audio",
+      "release_date": "2020-02-12",
+      "insert_date": "2020-02-12",
+      "number_of_views": 6,
+      "length": "60"
     }
   ]
 }
