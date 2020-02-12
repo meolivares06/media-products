@@ -78,12 +78,11 @@ class ProductsService {
       release_date: response.release_date || response.productReleaseDate,
       insert_date: response.insert_date || response.productInsertDate,
       number_of_views: response.number_of_views || response.productViews,
-      abbreviation:
-        response.productAbbreviation || response.productAbbreviation,
+      abbreviation: response.abbreviation || response.productAbbreviation || "",
       length: response.length || response.productLength
     };
 
-    const abbr = response.abbreviation || response.productAbbreviation;
+    const abbr = response.abbreviation;
 
     if (abbr === "") {
       t.abbreviation = GetAbbreviation(t.name);
