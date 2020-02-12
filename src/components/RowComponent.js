@@ -6,7 +6,7 @@ import GetLengthFormated from "./GetLengthFormated";
 import CategoriesService from "../servicios/CategoriesService";
 
 const RowComponent = (props) => {
-  const { product, category, onEdit, onIncrementNumber } = props;
+  const { product, category, onEdit, onIncrementNumber, onDelete } = props;
   console.log(category);
 
 
@@ -32,7 +32,7 @@ const RowComponent = (props) => {
               type="button"
               className="btn btn-sm btn-outline-secondary"
               onClick={() => {
-                props.delete(product.id);
+                props.onDelete(product.id);
               }}
             >
               Delete
